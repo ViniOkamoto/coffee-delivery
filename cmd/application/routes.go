@@ -1,16 +1,18 @@
 package application
 
 import (
-	"coffee-delivery/main/routes"
+	handler "coffee-delivery/main/cmd/handlers"
 
 	"github.com/gin-gonic/gin"
 )
 
 func loadRoutes() *gin.Engine {
+	ConnectDatabase()
+
 	router := gin.Default()
 	router.Use(gin.Logger())
 
-	routes.SetupUserRouters(router)
+	handler.CreateUserRoutes(router)
 
 	return router
 }
