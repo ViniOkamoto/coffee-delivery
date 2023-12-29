@@ -7,7 +7,6 @@ import (
 )
 
 func main() {
-	fmt.Println("User Created")
 	app := application.NewApp()
 
 	err := app.Run(context.TODO())
